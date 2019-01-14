@@ -1,0 +1,42 @@
+$site-width: 1920px;    // ширина сайта
+$gutter: 15px;
+
+$color-main--lightest: #f2fafd;
+$color-main--lighten: #5fa1c1;
+$color-main--light: #5fa1c1;
+$color-main: #2575aa;
+
+$color-secondary: #12a9eb;//checkbox, buttons
+
+$color-secondary: #FFEB3B; // дополнительный цвет
+$color-danger:    #D41131; // цвет ошибки, опасного действия
+$color-success:   #3FD411; // цвет подтверждения, удачного завершения операции
+$color-warning:   #D8AE1C; // цвет информационного сообщения
+
+$gray--lightest: #f1f3f2;
+$gray--lighten: #e1e5e8; //sidebar
+$gray--light:#f1f3f2;//main background
+$gray: #bfc2c4; //border
+$gray--dark: #afb0c3;//header tex
+$gray--darken: #2f3b4c;//header top
+$gray--darkest: #2f3b4c;
+
+$black: #000000;
+$white: #ffffff;
+
+$text-main: $gray;
+
+$btn-main-bg: $color-success;
+$btn-main-color: $white;
+$btn-main-border: $color-success;
+
+$font-family: 'Lato', 'Tahoma', serif;
+$font: 'Lato', 'Tahoma', sans-serif;
+
+$breakpoint: 1200px;
+
+$sm: 544px;     // Small screen / phone
+$md: 768px;     // Medium screen / tablet
+$lg: 1024px;     // Large screen / desktop
+$xl: 1200px;    // Extra large screen desktop
+$xxl: 1440px;   // Wide desktop

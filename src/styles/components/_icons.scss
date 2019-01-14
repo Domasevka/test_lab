@@ -1,0 +1,26 @@
+.icon {
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  vertical-align: middle;
+  opacity: 1;
+}
+
+.blue_mod {
+  fill: $color-success;
+}
+
+.gray_mod {
+  fill: $gray--lighten;
+}
+
+.icon-search {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-bar-menu {
+  height: 25px;
+  width: 25px;
+}
+

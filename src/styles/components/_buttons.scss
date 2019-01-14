@@ -1,0 +1,147 @@
+.btn {
+  @include transition;
+
+  display: inline-block;
+
+  text-align: center;
+  text-decoration: none;
+
+  border: 1px solid transparent;
+
+
+
+  &:not(:disabled):hover {
+    cursor: pointer;
+  }
+  &:active {
+    outline: none;
+  }
+  &:disabled {
+    cursor: default;
+  }
+  &_center {
+    margin: 0 auto;
+  }
+}
+
+.btn-group {
+  display: flex;
+
+  a {
+    letter-spacing: -1px;
+  }
+}
+
+.btn_bg {
+  @include font(16px, 400, 14px);
+
+  padding: 20px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+
+.btn_md {
+  @include font(16px, 400, 16px);
+
+  letter-spacing: 0;
+  word-spacing: 0;
+
+  padding: 16px 40px;
+}
+
+.btn_sm {
+  @include font(14px, 400, 14px);
+
+  border-radius: 2px;
+  padding: 10px;
+}
+
+//@each $color-name, $color-background, $color, $color-hover, $color-active, $color-disabled in
+//      (main, $color-main, $color-content-text, $color-success, $color-success, #e3e3e3),
+//      (secondary, $color-secondary, $color-secondary-text, $color-secondary-success, $color-secondary-success, #e3e3e3),
+//      (nofill, $gray--dark, $color-success, $color-secondary),
+//      (success, $color-main, $color-success, $color-secondary) {
+
+  // кнопка с рамкой и прозрачным фоном
+  //.btn_#{$color-name} {
+  //
+  //  background-color: transparent;
+  //
+  //  &:not(:disabled),
+  //  &:not(:disabled):link,
+  //  &:not(:disabled):visited {
+  //    color: $color;
+  //    @if $color-name == nofill {
+  //      border-color: $gray--dark;
+  //    } @else {
+  //      border-color: $color-main;
+  //    }
+  //  }
+  //  &:not(:disabled):hover,
+  //  &:not(:disabled):active {
+  //    color: $color-active;
+  //    @if $color-name == nofill {
+  //      border-color: $color-hover;
+  //      background-color: $color-hover;
+  //    } @else {
+  //      border-color:  $color-active;
+  //      background-color: $color-hover;
+  //    }
+  //  }
+  //
+  //  &:disabled {
+  //    color: $color-disabled;
+  //    border-color: $color-disabled;
+  //  }
+  //}
+
+  // кнопка полностью одного цвета
+  //.btn-fully_#{$color-name} {
+  //
+  //  background-color:  $color-background ;
+  //  border: 1px solid  $color-background ;
+  //  color: $color;
+  //
+  //
+  //  //&:not(:disabled),
+  //  //&:not(:disabled):link,
+  //  //&:not(:disabled):visited {
+  //  //  color: $color;
+  //  //  border-color: $color-main;
+  //  //}
+  //  &:not(:disabled):hover,
+  //  &:not(:disabled):active {
+  //    border-color: $color-hover;
+  //    background-color: $color-hover;
+  //  }
+    //&:disabled {
+    //  color: $color-disabled;
+    //  border-color: $color-disabled;
+    //}
+//  }
+//}
+
+.label {
+  &:after {
+    @include font(14px, 500, 40px);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    //color: $color-secondary;
+    border: none;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.label-new {
+  &:after {
+    content: 'new';
+    background-color: $color-main;
+  }
+}

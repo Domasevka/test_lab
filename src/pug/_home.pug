@@ -1,0 +1,48 @@
+section.panel
+  .container
+    .row
+      .panel__column
+        .place.card
+          .place__head.card-inner
+            .place__head-line
+              .place__head-line_left
+                .place__logo
+                  //img(src='img/logo_uni.jpg', alt="")
+                .place__code
+                  //img(src='img/qr.jpg', alt="")
+              a.place__link(href='#')
+
+            h2.place__name California University
+            span.place__coord ID: 111111111
+            button.btn.btn_sm.btn_secondary.btn-fully_secondary Copy in buffer
+
+          .place__info.card-inner
+              each val in place
+                .place__row
+                  .place__col
+                    strong.place__item=val.name
+                  .place__col
+                    span.place__descr=val.description
+              .place__row
+                .place__col
+                    strong.place__item Email:
+                .place__col.place__col_mail
+                    span.place__descr.place__descr_mail ca@university@gmail.com
+              each val in placeNext
+                .place__row
+                  .place__col
+                    strong.place__item=val.name
+                  .place__col
+                    span.place__descr=val.description
+          .place__btn.card-inner
+            button.btn.btn_bg.btn_main.btn-fully_main(type='button') Edit Profile
+      .panel__column
+        .card.card_inner.message
+          .tab
+            button.tablinks(onclick="")
+          span.message__logo
+            img.header__img(src="img/message.jpg", alt="Logo")
+          .message__body
+            h2.message__name Geo Message
+            p.message__text The results of yesterdays election came a surprise
+
