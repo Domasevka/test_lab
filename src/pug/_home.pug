@@ -1,48 +1,78 @@
-section.panel
+section.section
   .container
     .row
-      .panel__column
-        .place.card
-          .place__head.card-inner
-            .place__head-line
-              .place__head-line_left
-                .place__logo
-                  //img(src='img/logo_uni.jpg', alt="")
-                .place__code
-                  //img(src='img/qr.jpg', alt="")
-              a.place__link(href='#')
+      include partials/_sidebar
+      .content
+        .container-inner
+          .row.row-flex
+            .panel.col.col_lg
+              .panel__header.panel__header-tab.tab
+                button.tab__link(onclick="") Worklist        <span>RUN </span>       TO DO:  23 injections          02:15
+                button.tab__link.tab__link_active(onclick="") Method:  Method1.amx (00:00/04:30)
+                button.tab__link(onclick="") single run
+              .panel__body
+                .col.col_md-6
+                .col.col_md-6.panel__table.table-block
+                  .table-block__header
+                    h2.h2-line
+                      span.h2-line__text Pressure/Flow Settings
+                    span.h2-line__underline
+                    .table-block__radio.radio-btn
+                      label.radio-btn__label Constant Pressure
+                        input.radio-btn__input(type="radio" checked="checked" name="radio")
+                        span.radio-btn__checkmark
+                      each val in radio
+                        label.radio-btn__label=val.item
+                          input.radio-btn__input(type="radio" name="radio")
+                          span.radio-btn__checkmark
+                  include components/_table
+              .panel__footer
+                .btn-group.text-right
+                  button.panel__footer-btn.btn.btn-primary.btn_sm(onclick="") Save
+                  button.panel__footer-btn.btn.btn-primary.btn_sm(onclick="") Save as
+                  button.panel__footer-btn.btn.btn-nofill.btn_sm(onclick="") Cancel
 
-            h2.place__name California University
-            span.place__coord ID: 111111111
-            button.btn.btn_sm.btn_secondary.btn-fully_secondary Copy in buffer
+            .panel.col.col_lg-4
+              .panel.card
+                .panel__header.card-inner
+                  .panel__header-line
+                    .panel__header-line_left
+                      .panel__logo
+                        //img(src='img/logo_uni.jpg', alt="")
+                      .panel__code
+                        //img(src='img/qr.jpg', alt="")
+                    a.panel__link(href='#')
 
-          .place__info.card-inner
-              each val in place
-                .place__row
-                  .place__col
-                    strong.place__item=val.name
-                  .place__col
-                    span.place__descr=val.description
-              .place__row
-                .place__col
-                    strong.place__item Email:
-                .place__col.place__col_mail
-                    span.place__descr.place__descr_mail ca@university@gmail.com
-              each val in placeNext
-                .place__row
-                  .place__col
-                    strong.place__item=val.name
-                  .place__col
-                    span.place__descr=val.description
-          .place__btn.card-inner
-            button.btn.btn_bg.btn_main.btn-fully_main(type='button') Edit Profile
-      .panel__column
-        .card.card_inner.message
-          .tab
-            button.tablinks(onclick="")
-          span.message__logo
-            img.header__img(src="img/message.jpg", alt="Logo")
-          .message__body
-            h2.message__name Geo Message
-            p.message__text The results of yesterdays election came a surprise
+                  h2.panel__name California University
+                  span.panel__coord ID: 111111111
+                  button.btn.btn_sm.btn_secondary.btn-fully_secondary Copy in buffer
+
+                .panel__info.card-inner
+                    each val in panel
+                      .panel__row
+                        .panel__col
+                          strong.panel__item=val.name
+                        .panel__col
+                          span.panel__descr=val.description
+                    .panel__row
+                      .panel__col
+                          strong.panel__item Email:
+                      .panel__col.panel__col_mail
+                          span.panel__descr.panel__descr_mail ca@university@gmail.com
+                    each val in panelNext
+                      .panel__row
+                        .panel__col
+                          strong.panel__item=val.name
+                        .panel__col
+                          span.panel__descr=val.description
+                .panel__btn.card-inner
+                  button.btn.btn_bg.btn_main.btn-fully_main(type='button') Edit Profile
+
+            .panel.col.col_lg-8
+              .card.card_inner.message
+                span.message__logo
+                  img.header__img(src="img/message.jpg", alt="Logo")
+                .message__body
+                  h2.message__name Geo Message
+                  p.message__text The results of yesterdays election came a surprise
 

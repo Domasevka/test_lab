@@ -3,6 +3,7 @@
   top:0;
   height: 100vh;
 }
+
 .container {
   max-width: $site-width;
   width: 100%;
@@ -11,7 +12,7 @@
 }
 
 .container-inner {
-  max-width: 1270px;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: $gutter;
@@ -20,7 +21,6 @@
 
 .row {
   display: flex;
-  flex-wrap: wrap;
   min-width: 100%;
   &_center {
     justify-content: center;
@@ -38,7 +38,7 @@
   }
 }
 
-.card {
+/*.card {
   background: #ffffff none repeat scroll 0 0;
   padding: 0;
   border: 0 solid #e7e7e7;
@@ -64,6 +64,6 @@
       margin-top: auto;
     }
   }
-}
+}*/
 
 

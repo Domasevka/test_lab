@@ -1,13 +1,18 @@
 .sidebar
   .sidebar__wrapper
-    .sidebar__logo.logo
-      a.logo__link(href="#")
-        img.logo__img(src="img/logo.jpg", alt="Logo")
-      .logo__descr
-        h1.logo__text Geotrack
-        span ver 1.0
+    //.sidebar__logo.logo
+    //  a.logo__link(href="#")
+    //    img.logo__img(src="img/logo.jpg", alt="Logo")
+    //  .logo__descr
+    //    h1.logo__text Geotrack
+    //    span ver 1.0
     .sidebar__column
       form.sidebar__search
-        button(type="submit").header__search-btn
+        button(type="submit").sidebar__search-btn
           +icon("search", "gray_mod")
-        input.header__search-field(type="text" placeholder='Search geotrack' name="search")
+        input.sidebar__search-field(type="text" placeholder='Search' name="search")
+    .sidebar__column
+      form.sidebar__search
+        button(type="submit").sidebar__search-btn
+          +icon("search", "gray_mod")
+        input.sidebar__search-field(type="text" placeholder='Search' name="search")

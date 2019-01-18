@@ -1,115 +1,87 @@
-.panel {
+.section {
+  min-height: calc(100vh - 4.5em);
   background-color: $gray--light;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
   color: $gray;
-  min-height: calc(100vh - 70px);
-  padding: 15px 15px 15px 250px;
+}
+.content {
+  overflow-x: hidden;
+  width: 100%;
+  padding-top: 1rem;
+}
 
-&__column {
-  @include span(4);
-  border-radius: 4px;
+.col {
   display: flex;
   flex-direction: column;
 
-    &:last-child {
-      @include span(8);
-
-      @media (max-width: $md) {
-        @include span(12);
-      }
-    }
+  &_md-6 {
+    width: 50%;
 
     @media (max-width: $md) {
       @include span(12);
-
-      margin-bottom: 20px;
     }
+  }
+
+  &_lg {
+    @include span(12);
+
+    @media (max-width: $md) {
+      @include span(12);
+    }
+  }
+
+  &_lg-4 {
+    @include span(4);
+
+    @media (max-width: $md) {
+      @include span(12);
+    }
+  }
+
+  &_lg-6 {
+    @include span(6);
+
+    @media (max-width: $md) {
+      @include span(12);
+    }
+  }
+
+  &_lg-8 {
+    @include span(8);
+
+    @media (max-width: $md) {
+      @include span(12);
+    }
+  }
+
+  @media (max-width: $md) {
+    @include span(12);
+
+    margin-bottom: 20px;
   }
 }
 
-.place {
-  @include font(16px);
+.panel {
+  @include font(1.4rem);
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  background-color: $white;
+  color: $gray--darkest;
+  border: 1px solid $gray;
+  /*box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);*/
+  margin-bottom: 1em;
 
-
-  &__head {
-    display: flex;
-    flex-direction: column;
+  &__header {
     align-items: flex-start;
-    border-bottom: 1px solid #f6f6f8;
-    margin-bottom: 12px;
-  }
-
-  &__head-line {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 11px;
-  }
-
-  &__head-line_left {
-    display: flex;
-    align-items: center;
-  }
-
-
-  &__logo {
-    margin-right: 20px;
-    img {
-      width: 84px;
-    }
-
-    display: inline-block;
-  }
-
-  &__code {
-    display: inline-block;
-    justify-content: flex-end;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    padding: 15px;
-
-    & img {
-      width: 30px;
+    /*border-bottom: 1px solid #f6f6f8;*/
+    &-tab {
+      display: flex;
     }
   }
 
-  &__link {
-    width: 20px;
-    height: 20px;
-  }
-
-  &__info {
-    border-bottom: 1px solid #f6f6f8;
-    margin-bottom: 20px;
-  }
-
-  &__link {
-    border: solid #6e7c97;
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 6px;
-    transform: rotate(-45deg);
-  }
-
-  &__name {
-    margin-bottom: 7px;
-  }
-
-  &__coord {
-    color: $gray--light;
-    margin-bottom: 11px;
-  }
-
-  &__row {
+  &__body {
     display: flex;
-    width: 100%;
-
-    &:not(:last-child) {
-      margin-bottom: 15px;
-    }
   }
 
   &__col {
@@ -120,47 +92,104 @@
 
     &:last-child {
       flex: 1;
-
       color: $gray--light;
     }
+  }
 
-    &_mail {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+  &__footer {
+    background-color: $white;
+    border-top: 1px solid $gray--darken;
+    padding: 1rem;
+
+    &-btn:not(:last-child) {
+      margin-right: 1rem;
     }
 
-
   }
+}
 
-  &__item {
-    @include font(16px 500);
-
-    color: $gray--lightest;
+.text {
+  &-right {
+    align-items: flex-end;
+    justify-content: flex-end;
   }
+}
 
-  &__descr {
-    padding-right: 20px;
-    white-space: normal;
-    line-height: 1.6;
+.tab {
+  overflow: hidden;
+  background-color: $gray--lightest;
+  border-bottom: 1px solid $gray--darken;
 
-    &_mail {
-      color: $gray;
+  &__link {
+    position: relative;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: capitalize;
+    border: 1px solid $gray--lightest;
+    border-bottom: none;
+    border-right-color: $gray--darken;
+    padding: 1.4rem 1.4rem;
+
+    &_active {
+      background-color: $white;
+      border-color: $white;
+      border-right-color: $gray--darken;
+    }
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+      border-right-color: $gray--darken;
     }
   }
+}
 
-  &__number {
-    display: flex;
-    justify-content: center;
-    background-color: #ffbf51;
-    width: 95px;
-    color: #fff;
-    padding: 5px;
-    margin-bottom: 10px;
+.radio-btn {
+  &__label {
+    position: relative;
+    padding-left: 2.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: $white;
+    border: 1px solid $gray--darken;
+    border-radius: 50%;
+  }
+  &__label:hover &__input ~ &__checkmark {
+    background-color: $gray;
+  }
+  &__label &__input:checked ~ &__checkmark {
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+  }
+  &__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
   }
 
-  &__image {
-    margin-bottom: 20px;
+  &__label &__input:checked ~ &__checkmark:after {
+    display: block;
+  }
+  &__label &__checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
   }
 }
 
@@ -178,8 +207,4 @@
   }
 }
 
-#map {
-  width: 100%;
-  min-height: 550px;
-  background-color: grey;
-}
+

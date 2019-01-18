@@ -14,11 +14,39 @@ h1,
 // blog
 h2,
 .h2 {
-  @include font(20px, 500, 1.5);
+  @include font(1.4rem, 500, 1.5);
 
-  color: $gray--dark;
+  color: $gray--darkest;
   letter-spacing: 1px;
+
+  span {
+    display: inline-block;
+    background-color: $white;
+  }
+
+  &-line {
+
+    background-color: transparent;
+    z-index: 1;
+    &__text {
+      display: inline-block;
+      background-color: $white;
+      margin-left: 1.5rem;
+      padding: 0 0.8rem;
+    }
+    &__underline {
+      //border-bottom: 1px solid $gray--darkest;
+      height: 1px;
+      background-color: $gray--darkest;
+      padding: 0 1rem 1px;
+      margin: -1rem 0 2rem;
+    }
+  }
+
 }
+
+
+
 
 p {
   @include font(14px, 400, 1.5);

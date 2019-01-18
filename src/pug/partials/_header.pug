@@ -1,28 +1,23 @@
 header.header
   .container
-    .header__columns
-      .row.row-flex
-        .header__column.header__column_nav
-          nav.nav__list
-            ul.nav__items
-              li.nav__item
-                span.nav__btn
-                  +icon("menu", "gray_mod")
-              each val in nav
-                li.nav__item
-                  a.nav__link(href=val.href)=val.name
+      .row
+        .header__logo.logo
+          a.logo__link(href="#") Lims
+          //    img.logo__img(src="img/logo.jpg", alt="Logo")
+        .header__column-container
+          .container-inner
+            .row.row-flex
+              .header__column.header__column_nav
+                nav.nav__list
+                  ul.nav__items
+                    li.nav__item
+                      span.nav__btn
+                        +icon("menu", "gray_mod")
+                    each val in nav
+                      li.nav__item
+                        a.nav__link(href=val.href)=val.name
 
-
-        .header__column.header__column_search
-          form.header__search
-            button(type="submit").header__search-btn
-              +icon("search", "gray_mod")
-            input.header__search-field(type="text" placeholder='Search geotrack' name="search")
-          .header__item.dropdown
-            a.header__link(href="", role="button").nav-link.dropdown-toggle
-              img.header__img(src="img/user.jpg", alt="Logo")
-
-        .header__column.header__column_user
-          .header__item.dropdown
-            a.header__link(href="", role="button").nav-link.dropdown-toggle
-              img.header__img(src="img/user.jpg", alt="Logo")
+              .header__column.header__column_user
+                .header__item.dropdown
+                  a.header__link(href="", role="button").nav-link.dropdown-toggle
+                    img.header__img(src="img/user.jpg", alt="Logo")

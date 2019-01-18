@@ -1,8 +1,6 @@
 .btn {
   @include transition;
-
   display: inline-block;
-
   text-align: center;
   text-decoration: none;
 
@@ -32,7 +30,7 @@
   }
 }
 
-.btn_bg {
+.btn_lg {
   @include font(16px, 400, 14px);
 
   padding: 20px;
@@ -53,74 +51,70 @@
 .btn_sm {
   @include font(14px, 400, 14px);
 
-  border-radius: 2px;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 10px 20px;
 }
 
-//@each $color-name, $color-background, $color, $color-hover, $color-active, $color-disabled in
-//      (main, $color-main, $color-content-text, $color-success, $color-success, #e3e3e3),
-//      (secondary, $color-secondary, $color-secondary-text, $color-secondary-success, $color-secondary-success, #e3e3e3),
-//      (nofill, $gray--dark, $color-success, $color-secondary),
-//      (success, $color-main, $color-success, $color-secondary) {
+@each $color-name, $color-background, $color, $color-hover, $color-active, $color-disabled in
+      (primary, $color-secondary, $white, $color-secondary--light, $color-main, $gray),
+      (nofill, $white, $color-secondary, $color-secondary, $white) {
 
-  // кнопка с рамкой и прозрачным фоном
-  //.btn_#{$color-name} {
-  //
-  //  background-color: transparent;
-  //
-  //  &:not(:disabled),
-  //  &:not(:disabled):link,
-  //  &:not(:disabled):visited {
-  //    color: $color;
-  //    @if $color-name == nofill {
-  //      border-color: $gray--dark;
-  //    } @else {
-  //      border-color: $color-main;
-  //    }
-  //  }
-  //  &:not(:disabled):hover,
-  //  &:not(:disabled):active {
-  //    color: $color-active;
-  //    @if $color-name == nofill {
-  //      border-color: $color-hover;
-  //      background-color: $color-hover;
-  //    } @else {
-  //      border-color:  $color-active;
-  //      background-color: $color-hover;
-  //    }
-  //  }
-  //
-  //  &:disabled {
-  //    color: $color-disabled;
-  //    border-color: $color-disabled;
-  //  }
-  //}
+  //кнопка с рамкой и прозрачным фоном
+  .btn-#{$color-name} {
+    background-color: transparent;
 
-  // кнопка полностью одного цвета
-  //.btn-fully_#{$color-name} {
-  //
-  //  background-color:  $color-background ;
-  //  border: 1px solid  $color-background ;
-  //  color: $color;
-  //
-  //
-  //  //&:not(:disabled),
-  //  //&:not(:disabled):link,
-  //  //&:not(:disabled):visited {
-  //  //  color: $color;
-  //  //  border-color: $color-main;
-  //  //}
-  //  &:not(:disabled):hover,
-  //  &:not(:disabled):active {
-  //    border-color: $color-hover;
-  //    background-color: $color-hover;
-  //  }
-    //&:disabled {
-    //  color: $color-disabled;
-    //  border-color: $color-disabled;
+    &:not(:disabled),
+    &:not(:disabled):link,
+    &:not(:disabled):visited {
+      color: $color;
+      @if $color-name == nofill {
+        border-color: $color,;
+      } @else {
+        border-color: $color,;
+      }
+    }
+    &:not(:disabled):hover,
+    &:not(:disabled):active {
+      color: $color-background;
+      @if $color-name == nofill {
+        border-color: $color;
+        background-color: $color-hover;
+        color: $color-background;
+      } @else {
+        border-color: $color-hover;
+        background-color: $color-hover;
+        color: $color;
+      }
+    }
+    &:disabled {
+      color: $color-disabled;
+      border-color: $color-disabled;
+    }
+  }
+
+   //кнопка полностью одного цвета
+  .btn-#{$color-name} {
+    background-color:  $color-background;
+    border: 1px solid  $color-background;
+    color: $color;
+
+    &:not(:disabled),
+    &:not(:disabled):link,
+    &:not(:disabled):visited {
+      //color: $color;
+    }
+    //&:not(:disabled):hover,
+    //&:not(:disabled):active {
+    //  border-color: $color-hover;
+    //  background-color: $color-hover;
+    //  color: $color;
     //}
-//  }
-//}
+    &:disabled {
+      color: $color-disabled;
+      border-color: $color-disabled;
+    }
+  }
+}
 
 .label {
   &:after {

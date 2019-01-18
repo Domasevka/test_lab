@@ -1,4 +1,5 @@
 html {
+  font-size: 62.5%;
   box-sizing: border-box;
   background-color: transparent;
   height: 100vh;
@@ -6,7 +7,7 @@ html {
 
 body {
   font-family: $font;
-  font-size: 62.5%;
+  font-size: 1.4rem;
   line-height: 1;
 
   display: flex;

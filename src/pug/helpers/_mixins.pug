@@ -5,10 +5,9 @@ mixin base-page(page)
     head
       include ../meta/_head
     body
-      include ../partials/_sidebar
       main.main-wrapperr
         //include ../svg/svg
-        //include ../partials/_header
+        include ../partials/_header
         if block
           block
         //-include ../_index

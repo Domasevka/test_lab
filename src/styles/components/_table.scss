@@ -1,0 +1,91 @@
+.table {
+  width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      display: inherit;
+      flex-direction: inherit;
+      padding: 0 1.5rem;
+    }
+
+
+    &__radio {
+      flex-direction: row;
+    }
+  }
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  border-color: hsla(0,0%,100%,.1);
+  vertical-align: middle;
+  width: 25%;
+  background-color: white;
+  padding: 0.89em 1rem;
+}
+
+.table_sm > tbody > tr > td,
+.table_sm > tbody > tr > th,
+.table_sm > tfoot > tr > td,
+.table_sm > tfoot > tr > th,
+.table_sm > thead > tr > td,
+.table_sm > thead > tr > th {
+  width: 16.666%;
+}
+
+.table_bg > tbody > tr > td,
+.table_bg > tbody > tr > th,
+.table_bg > tfoot > tr > td,
+.table_bg > tfoot > tr > th,
+.table_bg > thead > tr > td,
+.table_bg > thead > tr > th {
+  width: 20%;
+}
+
+.table > thead > tr > th {
+  @include font(16px, 300, 1.24);
+  text-transform: capitalize;
+  border: 0;
+  color: $gray--light;
+  border-top-color: currentcolor;
+  border-right-color: currentcolor;
+  border-bottom-color: currentcolor;
+  border-left-color: currentcolor;
+  letter-spacing: normal;
+  padding: 0.639em 1rem 0.16em;
+
+  &:nth-child(odd) {
+    text-align: left;
+  }
+  &:nth-child(even) {
+    text-align: right;
+  }
+}
+
+.table > thead > tr > td {
+  @include font(14px, 300, 1.22);
+  border-top: .0625rem solid $color-main;
+  color: $gray;
+
+  &:nth-child(odd) {
+    text-align: left;
+  }
+  &:nth-child(even) {
+    text-align: right;
+  }
+}
+
+.table_sm > thead > tr > th,
+.table_sm > thead > tr > td {
+  &:nth-child(2) {
+    text-align: left;
+  }
+}
